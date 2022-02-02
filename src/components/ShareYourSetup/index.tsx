@@ -6,7 +6,7 @@ export function ShareYourSetup() {
         <ShareYourSetupContainer>
             <p>Share your setup with</p>
             <h3>#FuniroFurniture</h3>
-            <img src={backgroundAllImages} alt="image your setup" />
+            <img src={backgroundAllImages} alt="your setup" />
         </ShareYourSetupContainer>
     );
 }
