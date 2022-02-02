@@ -37,4 +37,8 @@ export const FooterContainer = styled.footer`
       background: #F4F5F7;
     }
   }
+
+  @media (max-width: 800px) {
+     flex-direction: column;
+  }
 `

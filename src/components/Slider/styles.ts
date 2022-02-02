@@ -17,8 +17,8 @@ export const SliderContainer = styled.div`
       position: absolute;
 
       background: rgba(255, 255, 255, 0.72);
-      bottom: 40px;
-      right: 40px;
+      bottom: 20px;
+      right: 20px;
       padding: 24px 105px 24px 24px;
       border-radius: 5px;
       -webkit-backdrop-filter: blur(5px);
@@ -29,6 +29,7 @@ export const SliderContainer = styled.div`
         font-size: 1.6rem;
         right: 30px;
         bottom: 29px;
+        color: var(--text);
       }
 
       h2 {
@@ -108,6 +109,103 @@ export const SliderContainer = styled.div`
     right: 120px;
     left: auto;
   }
+
+  @media (max-width: 1430px) {
+    .swiper-slide {
+      div {
+        padding: 10px 60px 10px 10px;
+
+        .arrowRight {
+          right: 20px;
+          bottom: 16px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1300px) {
+    .swiper-slide {
+      div {
+        .arrowRight {
+          right: 20px;
+          bottom: 16px;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          margin: 1px 0 5px;
+          font-size: 0.9rem;
+        }
+
+        span {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .swiper-slide {
+      div {
+        padding: 10px 40px 10px 10px;
+        right: 3px;
+        bottom: 8px;
+
+        .arrowRight {
+          right: 10px;
+          bottom: 10px;
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+
+        p {
+          margin: 1px 0 5px;
+          font-size: 0.8rem;
+        }
+
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .swiper-slide {
+      div {
+        h2, p {
+          display: none;
+        }
+
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .swiper-slide {
+      div {
+        padding: 5px 25px 5px 5px;
+
+        .arrowRight {
+          font-size: 1rem;
+          right: 6px;
+          bottom: 8px;
+        }
+
+        span {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
 `
 
 export const ContainerShopNow = styled.div`
@@ -145,5 +243,17 @@ export const ContainerShopNow = styled.div`
     &:hover {
       filter: brightness(0.9);
     }
+  }
+
+  @media (max-width: 1470px) {
+    width: 400px;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    display: none;
   }
 `

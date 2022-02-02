@@ -21,6 +21,7 @@ export function TipsAndTricks() {
         navigation
         effect='coverflow'
         pagination={{ clickable: true }}
+        loop={true}
       >
         <SwiperSlide>
           <img src={imgBannerTwo} alt="" />

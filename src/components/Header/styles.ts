@@ -31,8 +31,10 @@ export const HeaderContainer = styled.header`
         font-size: 1.1rem;
       }
 
-      span {
+      a {
         margin-right: 5px;
+        text-decoration: none;
+        color: var(--text);
       }
     }
   }

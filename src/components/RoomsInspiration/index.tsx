@@ -15,7 +15,7 @@ export function RoomsInspiration() {
   return (
     <RoomsInspirationContainer>
       <BeautifulRooms>
-        <h2>50+ Beautiful rooms inspiration</h2>
+        <h2 id='rooms'>50+ Beautiful rooms inspiration</h2>
         <p>
           Our designer already made a lot of beautiful prototipe of rooms that
           inspire you

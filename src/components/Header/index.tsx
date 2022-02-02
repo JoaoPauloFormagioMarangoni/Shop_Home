@@ -13,12 +13,14 @@ export function Header() {
           <ul>
             <li>ShopHome.</li>
             <li>
-              <span>Products</span> <IoIosArrowDown />
+              <a href="#products">Products</a> <IoIosArrowDown />
             </li>
             <li>
-              <span>Rooms</span> <IoIosArrowDown />
+              <a href="#rooms">Rooms</a> <IoIosArrowDown />
             </li>
-            <li>Inspirations</li>
+            <li>
+              <a href="#Inspirations">Inspirations</a>
+            </li>
           </ul>
           <div>
             <BiSearchAlt className="searchIcon" />

@@ -163,4 +163,10 @@ export const ProductsContainer = styled.div`
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  @media (max-width: 550px) {
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 `

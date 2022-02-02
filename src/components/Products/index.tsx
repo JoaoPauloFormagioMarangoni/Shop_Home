@@ -6,7 +6,7 @@ import { BsFillShareFill, BsHeart } from 'react-icons/bs'
 export function Products() {
   return (
     <ProductsContainer>
-      <h1>Our Products</h1>
+      <h1 id='products'>Our Products</h1>
       <ul>
         <li>
           <img src={imgBannerTwo} alt="" />
