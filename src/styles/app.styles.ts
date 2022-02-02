@@ -35,7 +35,7 @@ export const Feature = styled.ul`
 export const AppContainer = styled.div`
     hr {
         width: 93vw;
-        margin: auto;
+        margin: 50px auto;
         
         border: 1px solid;
         opacity: 0.08;

@@ -29,6 +29,7 @@ export function Slider() {
         autoHeight={true}
         pagination={{ clickable: true }}
         autoplay={true}
+        loop={true}
       >
         <SwiperSlide>
           <img src={imgBannerTwo} alt="" />

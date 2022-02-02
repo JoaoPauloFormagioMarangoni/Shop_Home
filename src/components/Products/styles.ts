@@ -151,4 +151,16 @@ export const ProductsContainer = styled.div`
       color: #fff;
     }
   }
+
+  @media (max-width: 1300px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 980px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 `

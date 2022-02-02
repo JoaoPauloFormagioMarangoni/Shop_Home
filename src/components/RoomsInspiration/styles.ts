@@ -48,7 +48,7 @@ export const RoomsInspirationContainer = styled.div`
 
     div {
       display: none;
-      
+
       padding: 15px;
       position: absolute;
       bottom: 24px;
@@ -118,6 +118,14 @@ export const RoomsInspirationContainer = styled.div`
 
   .swiper-button-disabled {
     display: none;
+  }
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+
+    .swiper {
+      margin-left: 0;
+    }
   }
 `
 

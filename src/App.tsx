@@ -13,6 +13,7 @@ import CustomerSupport from './assets/customerSupport.svg'
 import { Products } from './components/Products'
 import { RoomsInspiration } from './components/RoomsInspiration'
 import { TipsAndTricks } from './components/TipsAndTricks'
+import { ShareYourSetup } from './components/ShareYourSetup'
 
 function App() {
   return (
@@ -54,6 +55,8 @@ function App() {
       <Products />
       <RoomsInspiration />
       <TipsAndTricks />
+
+      <ShareYourSetup />
       <hr/>
       <Footer />
       <GlobalStyle />
