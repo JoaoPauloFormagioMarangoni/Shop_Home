@@ -11,13 +11,16 @@ import 'swiper/css/effect-coverflow'
 import { TipsAndTricksContainer } from './styles'
 
 export function TipsAndTricks() {
+
+  let width: number = window.screen.width
+
   return (
     <TipsAndTricksContainer>
       <h2>Tips &amp; Tricks</h2>
       <Swiper
         modules={[Navigation, Pagination, A11y, EffectCoverflow]}
         spaceBetween={40}
-        slidesPerView={3}
+        slidesPerView={width < 830 ? 1 : 3}
         navigation
         effect='coverflow'
         pagination={{ clickable: true }}

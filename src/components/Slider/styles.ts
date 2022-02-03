@@ -210,7 +210,7 @@ export const SliderContainer = styled.div`
 
 export const ContainerShopNow = styled.div`
   position: absolute;
-  z-index: 99999999;
+  z-index: 999;
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(31px);
   width: 494px;
