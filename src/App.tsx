@@ -17,10 +17,15 @@ import { TipsAndTricks } from './components/TipsAndTricks'
 import { ShareYourSetup } from './components/ShareYourSetup'
 import { CartProvider } from './contexts/useCart'
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 function App() {
   return (
     <CartProvider>
       <AppContainer>
+        <ToastContainer />
+
         <Header />
         <Slider />
 
