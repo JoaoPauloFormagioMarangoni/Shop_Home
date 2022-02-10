@@ -1,4 +1,4 @@
-export interface ProductsProps {
+export interface ProductsCartProps {
   id: number
   title: string
   supTitle: string
@@ -9,6 +9,12 @@ export interface ProductsProps {
   amount: number
 }
 
-export interface RoomsInspirationProps {
-
+export interface ProductsProps {
+  id: number
+  title: string
+  supTitle: string
+  value: number
+  image: string
+  createdAt: string
+  promotion: number
 }

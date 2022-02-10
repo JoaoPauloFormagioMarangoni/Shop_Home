@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
-import api from '../services/api'
-import { ProductsProps } from '../types'
+// import api from '../services/api'
+import { ProductsCartProps, ProductsProps } from '../types'
+
+import { ourProducts, stock } from './data'
 
 import { toast } from 'react-toastify'
 
@@ -14,7 +16,8 @@ interface UpdatedProps {
 }
 
 interface CartContextProps {
-  cart: ProductsProps[]
+  products: ProductsProps[]
+  cart: ProductsCartProps[]
   addProduct: (idProduct: number) => void
   deleteProduct: (idProduct: number) => void
   updatedProductAmount: ({ idProduct, amount }: UpdatedProps) => void
@@ -23,7 +26,7 @@ interface CartContextProps {
 const ProductsContext = createContext({} as CartContextProps)
 
 export function CartProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState<ProductsProps[]>(() => {
+  const [cart, setCart] = useState<ProductsCartProps[]>(() => {
     const storagedCart = localStorage.getItem('@ShopHome:cart')
 
     if (storagedCart) {
@@ -33,21 +36,23 @@ export function CartProvider({ children }: CartProviderProps) {
     return []
   })
 
+  let products: ProductsProps[] = ourProducts
+
   async function addProduct(idProduct: number) {
     try {
       const itemVerifiction = cart.findIndex((item) => item.id === idProduct)
-
+      console.log(ourProducts)
       if (itemVerifiction >= 0) {
         updatedProductAmount({
           idProduct: cart[itemVerifiction].id,
           amount: cart[itemVerifiction].amount + 1,
         })
       } else {
-        const itemSelected = await api
-          .get('/ourProducts')
-          .then((response) => response.data)
+        // const itemSelected = await api
+        //   .get('/ourProducts')
+        //   .then((response) => response.data)
 
-        for (let index of itemSelected) {
+        for (let index of ourProducts) {
           if (index.id === idProduct) {
             setCart([...cart, { amount: 1, ...index }])
             localStorage.setItem(
@@ -122,7 +127,7 @@ export function CartProvider({ children }: CartProviderProps) {
       if (amount <= 0) {
         throw Error()
       } else {
-        const stock = await api.get('/stock').then((response) => response.data)
+        // const stock = await api.get('/stock').then((response) => response.data)
         const itemVerifiction = cart.findIndex((item) => item.id === idProduct)
         let exceededTheAmount = false
 
@@ -180,7 +185,7 @@ export function CartProvider({ children }: CartProviderProps) {
 
   return (
     <ProductsContext.Provider
-      value={{ cart, addProduct, deleteProduct, updatedProductAmount }}
+      value={{ products, cart, addProduct, deleteProduct, updatedProductAmount }}
     >
       {children}
     </ProductsContext.Provider>

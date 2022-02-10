@@ -10,18 +10,18 @@ import { formatPrice } from '../../util/format'
 import { useCart } from '../../contexts/useCart'
 
 export function Products() {
-  const { addProduct } = useCart()
+  const { products, addProduct } = useCart()
 
-  const [products, setProducts] = useState<ProductsProps[]>([])
+  // const [products, setProducts] = useState<ProductsProps[]>([])
 
-  useEffect(() => {
-    async function loadProducts() {
-      const response = await api.get(`/ourProducts`)
-      setProducts(response.data)
-    }
+  // useEffect(() => {
+  //   async function loadProducts() {
+  //     const response = await api.get(`/ourProducts`)
+  //     setProducts(response.data)
+  //   }
 
-    loadProducts()
-  }, [])
+  //   loadProducts()
+  // }, [])
 
   function isNew(productDate: string) {
     let nowDay = new Date().getDate()
