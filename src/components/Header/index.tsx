@@ -7,16 +7,41 @@ import { BiSearchAlt, BiMenuAltLeft } from 'react-icons/bi'
 import { BackLeft, BackRight, HeaderContainer } from './styles'
 
 import { Button, SwipeableDrawer } from '@mui/material'
+
 import React, { useState } from 'react'
+import { Cart } from '../Cart'
+import { useCart } from '../../contexts/useCart'
 
 export function Header() {
+  const { cart } = useCart()
+
   const [isOpenDrawer, setIsOpenDrawer] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false)
+
+  function handleOpenModal() {
+    setIsOpenModal(true)
+    setIsOpenDrawer(false)
+  }
+
+  function handleCloseModal() {
+    setIsOpenModal(false)
+    setIsOpenDrawer(true)
+  }
+
+  function totalAmount() {
+    const total = cart.reduce((acc, product) => (acc += product.amount), 0)
+    return total
+  }
 
   return (
     <>
+      <Cart isOpenModal={isOpenModal} handleCloseModal={handleCloseModal} />
       <HeaderContainer>
         <React.Fragment>
-          <Button onClick={() => setIsOpenDrawer(!isOpenDrawer)}>
+          <Button
+            disabled={isOpenModal ? true : false}
+            onClick={() => setIsOpenDrawer(!isOpenDrawer)}
+          >
             <BiMenuAltLeft />
           </Button>
           <SwipeableDrawer
@@ -24,7 +49,7 @@ export function Header() {
             open={isOpenDrawer}
             onClose={() => setIsOpenDrawer(false)}
             onOpen={() => setIsOpenDrawer(true)}
-            className='swiperableDrawer'
+            className="swiperableDrawer"
           >
             <nav>
               <ul>
@@ -51,7 +76,10 @@ export function Header() {
             </nav>
             <div>
               <FiHeart className="heart" />
-              <BsCart3 className="cart" />
+              <button onClick={handleOpenModal}>
+                <span>{totalAmount()}</span>
+                <BsCart3 className="cart" />
+              </button>
               <div>
                 <FaUserSecret />
               </div>

@@ -44,8 +44,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .MuiPaper-root {
+        padding: 0 10px ;
+        
         nav,
-        div,
+        > div,
         ul {
             display: flex;
             align-items: center;
@@ -81,6 +83,11 @@ export const GlobalStyle = createGlobalStyle`
 
         nav {
             div {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+
                 margin-left: 15px;
                 position: relative;
 
@@ -100,15 +107,20 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         > div {
-            gap: 25px;
+            justify-content: space-around;
             font-size: 1.2rem;
             flex-direction: row;
 
             div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
                 border: 1px solid #00000073;
                 border-radius: 50%;
                 box-shadow: inset 3px 3px 4px #00000073;
-                padding: 10px;
+                height: 45px;
+                width: 45px;
                 font-size: 1.4rem;
             }
 
@@ -120,13 +132,138 @@ export const GlobalStyle = createGlobalStyle`
                 }
             }
 
-            .cart {
-                cursor: pointer;
+            button {
+                background: transparent;
+                border: none;
+                font-size: 1.2rem;
 
-                &:hover {
+                position: relative;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -12px;
+                    right: -12px;
+
+                    color: var(--orange);
+                    background: #000000;
+
+                    font-size: 0.7rem;
+                    font-weight: bold;
+
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                }
+
+                & .cart:hover {
                     color: darkorange;
                 }
             }
         }
+    }
+
+    .modalStyle {
+        padding: 3rem;
+        width: 80vw;
+        height: 90vh;
+        position: relative;
+        border-radius: 5px;
+        background: #954d20;
+        color: #ffe;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        > div {
+            padding: 10px;
+
+            h3 {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            p {
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            button {
+                background: #ffe;
+                font-weight: 500;
+                border-radius: 50px;
+                padding: 5px 15px;
+                font-size: 1rem;
+                border: 1px solid #ffe;
+                box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.25);
+                transition: all 0.2s;
+
+                &:hover {
+                    background: var(--orange);
+                    color: #ffe;
+                }
+            }
+        }
+
+        ul {
+            height: 100%;
+            width: 100%;
+
+            overflow-x: auto;
+            list-style: none;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            
+
+            li {
+                position: relative;
+
+                img {
+                    width: 100%;
+                    border-radius: 10px 10px 0 0;
+                }
+
+                div {
+                    margin-bottom: 5px;
+
+                    button {
+                        display: flex;
+                        align-items: center;
+                        color: var(--text);
+                        border-radius: 50px;
+                        padding: 2px 8px;
+                        border: 1px solid #ffe;
+                        font-size: 1rem;
+
+                        &:hover {
+                            box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.25), 2px 2px 3px rgba(0, 0, 0, 0.25);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .react-modal-overlay {
+      background: rgba(0, 0, 0, 0.5);
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
     }
 `
