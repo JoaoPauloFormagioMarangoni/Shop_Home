@@ -1,10 +1,10 @@
 import { ProductsContainer } from './styles'
 
 import { BsFillShareFill, BsHeart } from 'react-icons/bs'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
-import { ProductsProps } from '../../types'
-import api from '../../services/api'
+// import { ProductsProps } from '../../types'
+// import api from '../../services/api'
 import { formatPrice } from '../../util/format'
 
 import { useCart } from '../../contexts/useCart'
