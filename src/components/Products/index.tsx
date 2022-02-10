@@ -9,9 +9,6 @@ import { formatPrice } from '../../util/format'
 
 import { useCart } from '../../contexts/useCart'
 
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-
 export function Products() {
   const { addProduct } = useCart()
 
@@ -52,7 +49,6 @@ export function Products() {
 
   return (
     <ProductsContainer>
-      <ToastContainer />
       <h1 id="products">Our Products</h1>
       <ul>
         {products.map((product) => (
